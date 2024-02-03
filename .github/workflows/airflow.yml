@@ -20,14 +20,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        role-to-assume: arn:aws:iam::623838372493:role/github-oidc-role
-        role-session-name: rolesessionname
-        aws-region:  ${{ env.AWS_REGION }}
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::623838372493:role/github-oidc-role
+          role-session-name: rolesessionname
+          aws-region:  ${{ env.AWS_REGION }}
 
-    - name : push Airflow Dags in S3 Bucket
-      id: push-dag
-      run: |
-        aws s3 cp ./dags/weather_dag.py s3://etl-project-airflow-bucket/dags/weather_dag.py
+      - name : push Airflow Dags in S3 Bucket
+        id: push-dag
+        run: |
+          aws s3 cp ./dags/weather_dag.py s3://etl-project-airflow-bucket/dags/weather_dag.py
