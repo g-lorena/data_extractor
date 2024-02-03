@@ -15,8 +15,7 @@ permissions:
 jobs:
   run-container:
     name: push airflow dags
-    runs-on: ubuntu-lastest
-
+    runs-on: ubuntu-latest
   steps:
     - name: Checkout
       uses: actions/checkout@v2
