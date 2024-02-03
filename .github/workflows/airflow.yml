@@ -31,3 +31,8 @@ jobs:
         id: push-dag
         run: |
           aws s3 cp ./dags/weather_dag.py s3://etl-project-airflow-bucket/dags/weather_dag.py
+      
+      - name : push Airflow requirements in S3 Bucket
+        id: push-requirements
+        run: |
+          aws s3 cp ./airflow_requirements.txt s3://etl-project-airflow-bucket/airflow_requirements.txt
