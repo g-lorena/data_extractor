@@ -13,7 +13,7 @@ def extract_data():
 
     # api endpoint URL
 
-    api_url = f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}" 
+    api_url = f"https://api.openweathermap.org/data/2.5/weather?q=london&appid=797a2c2546bae844a21745b841cc6113" 
     # Send the GET request
     response = requests.get(api_url)
 
