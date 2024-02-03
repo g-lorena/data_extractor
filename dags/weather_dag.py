@@ -6,10 +6,10 @@ from airflow.operators.python_operator import PythonOperator
 
 def extract_data():
     # Load the environment variables from the .env file
-    load_dotenv()
+    #load_dotenv()
 
-    city_name = os.environ['city_name']
-    api_key = os.environ['api_key']
+    #city_name = os.environ['city_name']
+    #api_key = os.environ['api_key']
 
     # api endpoint URL
 
