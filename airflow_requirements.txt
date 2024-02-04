@@ -3,4 +3,4 @@ apache-airflow-providers-docker
 airflow.operators.bash_operator
 airflow.operators.python
 requests
-pandas
+apache-airflow[pandas]==2.5.1
