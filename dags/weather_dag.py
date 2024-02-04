@@ -2,6 +2,7 @@ from datetime import datetime
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 import requests
+import pandas as pd
 #from data_extractor.openAPI_extract import extract_data
 
 

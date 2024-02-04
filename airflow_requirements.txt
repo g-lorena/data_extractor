@@ -3,3 +3,4 @@ apache-airflow-providers-docker
 airflow.operators.bash_operator
 airflow.operators.python
 requests
+pandas
