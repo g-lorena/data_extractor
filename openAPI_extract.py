@@ -2,6 +2,7 @@ import requests
 from dotenv import load_dotenv
 import os
 import pandas as pd
+from datetime import timedelta, datetime
 
 
 def extract_data():
@@ -40,10 +41,16 @@ def extract_data():
                             }
         transformed_data_list.append(transformed_data)                  
         df_transformed_data = pd.DataFrame(transformed_data_list)
-        print(df_transformed_data)
+        return df_transformed_data
     else:
         # Handle the error
         print("API request failed with status code:", response.status_code)
 
+
+def load_csv(df_data):
+    now = datetime.now()
+    dt_string = now.strftime("%d%m%Y%H%M%S")
+    dt_string = 'london_weather_' + dt_string
+    df_data.to_csv(f"s3://weather-api-datalake/{dt_string}.csv", index=False)
 
 
